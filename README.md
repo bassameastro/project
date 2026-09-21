@@ -18,20 +18,51 @@ An interactive, front-end-only web app for visualizing sorting and searching alg
 - HTML5 and CSS3
 - No backend, no bundler
 
+## Architecture
+
+- `sections/` holds the three main pages: Algorithms, Data Structures and Cryptography.
+- `components/` holds reusable UI pieces used by those sections.
+- `logic/` holds the algorithm implementations, kept separate from the UI so they're easy to test and reuse.
+- `data/` holds static content such as algorithm definitions, pseudocode and Big-O tables.
+- `styles/` has one CSS file per area, plus `base`, `layout` and `responsive` for shared rules.
+
 ## Project Structure
 
 ```
 project/
 ├── index.html
 ├── src/
-│   ├── app.js
-│   ├── algorithms.js
-│   ├── data_Structures.js
-│   ├── complexityVisualizer.js
-│   ├── bigO.js
-│   └── cryptogarphy.js
+│   ├── app.js                      # App entry: navigation and section routing
+│   ├── hooks.js                    # Shared React hooks
+│   ├── components/
+│   │   ├── arrayEditor.js          # Array input/editing UI
+│   │   ├── treeEditor.js           # Tree editor UI
+│   │   └── complexityVisualizer.js # Big-O growth chart
+│   ├── data/
+│   │   ├── algorithmDefinitions.js # Algorithm metadata
+│   │   ├── bigO.js                 # Complexity data
+│   │   └── pseudocode.js           # Pseudocode shown per algorithm
+│   ├── logic/                      # Pure algorithm logic (no UI)
+│   │   ├── array.js
+│   │   ├── sorting.js
+│   │   ├── search.js
+│   │   ├── caesar.js
+│   │   └── treeLayout.js
+│   └── sections/                   # One page per top-level section
+│       ├── algorithms/algorithms.js
+│       ├── data-structures/dataStructures.js
+│       └── cryptography/cryptography.js
 ├── styles/
-│   └── styles.css
+│   ├── base.css
+│   ├── layout.css
+│   ├── navigation.css
+│   ├── responsive.css
+│   ├── home.css
+│   ├── algorithms.css
+│   ├── data-structures.css
+│   ├── trees.css
+│   ├── complexity.css
+│   └── crypto.css
 └── .gitignore
 ```
 
