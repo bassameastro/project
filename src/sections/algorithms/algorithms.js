@@ -595,10 +595,12 @@ export const AlgorithmSection = () => {
             ))
           )
         ),
-        e(ComplexityVisualizer, {
-          algorithmLabel: `${ALGORITHMS[mode].find((item) => item.key === algorithm)?.label || 'Algorithm'} Big O Complexity Growth Visualizer`,
-          highlightedComplexity: ALGORITHMS[mode].find((item) => item.key === algorithm)?.bigO,
-        })
+         e('div', { className: 'algorithm-complexity-panel' },
+      e(ComplexityVisualizer, {
+        algorithmLabel: `${ALGORITHMS[mode].find((item) => item.key === algorithm)?.label || 'Algorithm'} Big O Complexity Growth Visualizer`,
+        highlightedComplexity: ALGORITHMS[mode].find((item) => item.key === algorithm)?.bigO,
+      })
+    )
       )
     )
   );

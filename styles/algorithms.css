@@ -405,3 +405,7 @@ button.primary {
   font-size: 0.95rem;
 }
 
+/* Explicit order for the Algorithms section, all screen sizes */
+.algorithm-layout > .algorithm-controls-panel   { order: 1; }
+.algorithm-layout > .algorithm-visual-panel     { order: 2; }
+.algorithm-layout > .algorithm-complexity-panel { order: 3; grid-column: 1 / -1; }
