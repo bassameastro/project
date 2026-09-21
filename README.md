@@ -1,120 +1,79 @@
-```markdown
-# Sorting & Search Visualizer
+# Sort & Search Visualizer
 
-An interactive web-based visualizer for sorting algorithms, search algorithms, and data structures. Watch algorithms come to life with real-time visualization of how different sorting and search techniques work.
+An interactive, front-end-only web app for visualizing sorting and searching algorithms, core data structures, a Caesar cipher, and Big-O growth. It runs entirely in the browser, with no backend and no build step.
 
 ## Features
 
-- **Sorting Algorithm Visualization**: Visualize popular sorting algorithms including Bubble Sort, Merge Sort, Quick Sort, and more
-- **Search Algorithm Visualization**: See how different search algorithms traverse and find elements
-- **Data Structure Visualization**: Understand how various data structures organize and manage data
-- **Algorithm Complexity Analysis**: View time and space complexity comparisons in real-time
-- **Interactive Controls**: Adjust array size, speed, and choose different algorithms
-- **Educational Tool**: Perfect for learning algorithm concepts
+- **Sorting:** Selection Sort, Bubble Sort (step-by-step animation)
+- **Searching:** Linear Search, Binary Search, DFS, BFS
+- **Data structures:** Array, Stack, Queue, Linked List, and a Tree editor
+- **Caesar cipher wheel:** encrypt and decrypt visually
+- **Big-O visualizer:** compare how common complexities grow with input size
+- **Interactive controls:** adjust array size, speed, and algorithm
 
-## Technologies Used
+## Tech Stack
 
-- **HTML5** - Structure and layout
-- **CSS3** - Styling and animations
-- **JavaScript** - Algorithm implementations and visualization logic
+- React 18 (loaded from a CDN, UMD build)
+- JavaScript ES modules
+- HTML5 and CSS3
+- No backend, no bundler
 
 ## Project Structure
 
 ```
-sorting-search-visualizer/
-├── index.html              # Main HTML file
-├── styles.css              # Styling
-├── app.js                  # Main application logic
-├── algorithms.js           # Sorting and search algorithms
-├── data_Structures.js      # Data structure implementations
-├── complexityVisualizer.js # Algorithm complexity visualization
-├── cryptogarphy.js         # Additional utilities (cryptography)
-└── .gitignore              # Git ignore rules
+project/
+├── index.html
+├── src/
+│   ├── app.js
+│   ├── algorithms.js
+│   ├── data_Structures.js
+│   ├── complexityVisualizer.js
+│   ├── bigO.js
+│   └── cryptogarphy.js
+├── styles/
+│   └── styles.css
+└── .gitignore
 ```
 
-## Installation
+> Update the paths above so they match the actual folders.
 
-1. Clone the repository:
+## Getting Started
+
 ```bash
-git clone https://github.com/bassameastro/sorting-search-visualizer.git
-cd sorting-search-visualizer
+git clone https://github.com/bassameastro/project.git
+cd project
 ```
 
-2. Open the project in your browser:
-```bash
-# Simply open index.html in your browser
-open index.html
-# or
-start index.html
-```
+Because the app uses ES modules, opening `index.html` directly may be blocked by the browser. Serve it locally instead:
 
-Or use a local server:
 ```bash
 # Python 3
 python -m http.server 8000
 
-# Node.js (with http-server)
+# or Node.js
 npx http-server
 ```
 
-Then navigate to `http://localhost:8000`
+Then open `http://localhost:8000`.
 
 ## Usage
 
-1. **Select an Algorithm**: Choose from the available sorting or search algorithms
-2. **Adjust Parameters**: Set the array size and animation speed
-3. **Start Visualization**: Click the start button to watch the algorithm in action
-4. **Analyze Complexity**: View time and space complexity metrics
-5. **Compare Algorithms**: Run different algorithms to see performance differences
-
-## Learning Objectives
-
-This visualizer helps you understand:
-- How sorting algorithms work step-by-step
-- Time and space complexity comparisons
-- Data structure operations
-- Algorithm efficiency and performance
+1. Pick a sorting or searching algorithm, or a data structure.
+2. Set the array size and animation speed.
+3. Press start and watch the steps play out.
+4. Use the Big-O and cipher tabs to explore complexity and encryption.
 
 ## Contributing
 
-Contributions are welcome! Feel free to:
-- Add new sorting/search algorithms
-- Improve the visualization interface
-- Fix bugs and improve performance
-- Enhance documentation
-
-To contribute:
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a branch: `git checkout -b feature/my-feature`
+3. Commit and push your changes
+4. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT. Add a `LICENSE` file to the repo, or remove this section.
 
 ## Author
 
-**Bassam** - [bassameastro](https://github.com/bassameastro)
-
-## Acknowledgments
-
-- Inspired by educational algorithm visualization tools
-- Built for computer science students and enthusiasts
-```
-
----
-
-## How to save this file:
-
-1. **Copy the markdown content above** (everything in the code block)
-2. **Create a new file** in your project root directory named `README.md`
-3. **Paste the content** into that file
-4. **Save it** and commit to your repository
-
-```bash
-git add README.md
-git commit -m "Add comprehensive README"
-git push origin main
-```
+**Bassam**: [@bassameastro](https://github.com/bassameastro)
