@@ -1,0 +1,210 @@
+/* ComplexityVisualizer Styles */
+.complexity-visualizer {
+  margin-top: 28px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.complexity-visualizer h3 {
+  margin: 0 0 24px 0;
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.complexity-visualizer h4 {
+  margin: 0 0 12px 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.complexity-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.complexity-slider-container label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+  min-width: 140px;
+}
+
+.complexity-slider {
+  flex: 1;
+  min-width: 200px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.complexity-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  transition: background 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.complexity-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.complexity-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  transition: background 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.complexity-slider::-moz-range-thumb:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.complexity-chart-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+  background: var(--surface-muted);
+  border-radius: 8px;
+  padding: 12px;
+  overflow: auto;
+  max-width: 100%;
+}
+
+.complexity-canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: var(--surface);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.complexity-tooltip {
+  position: absolute;
+  z-index: 4;
+  min-width: 120px;
+  padding: 8px 10px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+  font-size: 0.78rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.complexity-metrics {
+  margin-top: 28px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.metric-card {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-left-color 200ms ease;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.home-metric-card {
+  border-left-color: var(--complexity-color);
+}
+
+.metric-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+  overflow-wrap: anywhere;
+}
+
+.metric-value {
+  font-size: clamp(0.95rem, 1.6vw, 1.3rem);
+  font-weight: 700;
+  color: var(--complexity-color, var(--accent));
+  margin-top: 8px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Light mode adjustments for complexity visualizer */
+body:not([data-theme="dark"]) .complexity-slider::-webkit-slider-thumb {
+  background: var(--accent);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+body:not([data-theme="dark"]) .complexity-slider::-moz-range-thumb {
+  background: var(--accent);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments for complexity visualizer */
+@media (max-width: 900px) {
+  .complexity-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .complexity-slider-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .complexity-slider-wrapper {
+    width: 100%;
+  }
+
+  .complexity-slider-label {
+    min-width: auto;
+  }
+
+  .complexity-slider-value {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+}
+

@@ -13,6 +13,8 @@ export const ArrayEditor = ({
   onMessageChange,
   onOperation,
   variant = 'cells',
+  controlsOnly = false,
+  hideControls = false,
 }) => {
   const [createInput, setCreateInput] = useState(items.join(','));
   const [valueInput, setValueInput] = useState('');
@@ -91,9 +93,7 @@ export const ArrayEditor = ({
     setDraggedIndex(null);
   };
 
-  if (variant === 'cells') {
-    return e('div', { className: 'data-array-editor' },
-      canEdit && e('div', { className: 'data-controls-group' },
+  const cellControls = canEdit && e('div', { className: 'data-controls-group' },
         e('label', null, 'Create Array', e('input', {
           type: 'text', value: createInput, placeholder: '10,20,30',
           onChange: (event) => setCreateInput(event.target.value),
@@ -108,13 +108,20 @@ export const ArrayEditor = ({
           e('button', { onClick: removeValue }, 'Remove'),
           e('button', { onClick: updateValue }, 'Update')
         )
-      ),
-      e('div', { className: 'data-array-visual' },
-        e('div', { className: 'data-visual-label' }, 'Index 0 → n'),
-        e('div', { className: 'data-array-row' }, shownItems.map((item, index) => e('div', {
-          key: `${item}-${index}`, className: 'data-array-cell',
-        }, e('span', { className: 'data-array-index' }, index), e('span', { className: 'data-array-value' }, item))))
-      )
+      );
+
+  if (variant === 'cells') {
+    if (controlsOnly) return cellControls;
+    const cellVisual = e('div', { className: 'data-array-visual' },
+      e('div', { className: 'data-visual-label' }, 'Index 0 → n'),
+      e('div', { className: 'data-array-row' }, shownItems.map((item, index) => e('div', {
+        key: `${item}-${index}`, className: 'data-array-cell',
+      }, e('span', { className: 'data-array-index' }, index), e('span', { className: 'data-array-value' }, item))))
+    );
+    if (hideControls) return cellVisual;
+    return e('div', { className: 'data-array-editor' },
+      !hideControls && cellControls,
+      cellVisual
     );
   }
 

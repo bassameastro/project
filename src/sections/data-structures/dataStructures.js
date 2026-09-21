@@ -574,6 +574,7 @@ export const DataStructuresSection = () => {
     return e(ArrayEditor, {
       items: arrayItems,
       editable: true,
+      hideControls: true,
       onItemsChange: setArrayItems,
       onOperation: setActiveOperation,
       variant: 'cells',
@@ -590,6 +591,14 @@ export const DataStructuresSection = () => {
             setActiveOperation(defaultOperationForStructure(event.target.value));
           },
         }, dataStructureOptions.map((item) => e('option', { key: item.id, value: item.id }, item.label)))),
+        selectedStructure === 'array' && e(ArrayEditor, {
+          items: arrayItems,
+          editable: true,
+          controlsOnly: true,
+          onItemsChange: setArrayItems,
+          onOperation: setActiveOperation,
+          variant: 'cells',
+        }),
         selectedStructure === 'stack' && e('div', { className: 'data-controls-group' },
           e('input', {
             type: 'number',

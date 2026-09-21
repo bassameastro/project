@@ -1,0 +1,226 @@
+.data-structures-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1.7fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.data-controls-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.data-visual-card {
+  min-width: 0;
+}
+
+.tree-info-panel {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.tree-info-title {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+}
+
+.tree-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tree-info-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.tree-info-term {
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.tree-info-definition {
+  color: var(--text);
+}
+
+.stack-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.data-array-editor {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.3fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.data-array-editor .data-controls-group {
+  min-width: 0;
+}
+
+.data-visual-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.data-pseudocode-panel {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  color: var(--text);
+  margin-top: 6px;
+}
+
+.data-pseudocode-title {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.data-pseudocode-code {
+  margin: 0;
+  padding: 0;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: var(--text);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.data-pseudocode-line {
+  min-height: 1.75em;
+}
+
+.data-visual-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-height: 220px;
+  justify-content: flex-end;
+  padding: 16px 0;
+}
+
+.data-stack-top {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.data-stack-item {
+  min-width: 86px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(88,166,255,0.85), rgba(34,96,180,0.9));
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.data-array-visual,
+.data-queue-visual,
+.data-list-visual {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.data-controls-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.data-inline-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.data-visual-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.data-array-row,
+.data-queue-row,
+.data-list-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.data-array-cell,
+.data-queue-cell,
+.data-list-node {
+  min-width: 62px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(88,166,255,0.85), rgba(34,96,180,0.9));
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.data-array-index {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+
+.data-array-value {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.data-list-node-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.data-list-arrow {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.data-empty-state {
+  color: var(--muted);
+  font-style: italic;
+}
+

@@ -46,9 +46,8 @@ export const ComplexityVisualizer = ({ algorithmLabel = 'Big O Complexity Growth
     }
 
     complexities.forEach((complexity) => {
-      const isHighlighted = complexity.name === highlightedComplexity;
-      context.strokeStyle = isHighlighted ? '#dc2626' : complexity.color;
-      context.lineWidth = isHighlighted ? 4 : 2;
+      context.strokeStyle = complexity.color;
+      context.lineWidth = 2;
       context.beginPath();
       for (let value = 1; value <= maxX; value++) {
         const x = padding + (value / maxX) * graphWidth;
@@ -58,7 +57,7 @@ export const ComplexityVisualizer = ({ algorithmLabel = 'Big O Complexity Growth
       }
       context.stroke();
     });
-  }, [n, highlightedComplexity]);
+  }, [n]);
 
   return e('div', { className: 'complexity-visualizer' },
     e('h3', null, algorithmLabel),
@@ -73,10 +72,13 @@ export const ComplexityVisualizer = ({ algorithmLabel = 'Big O Complexity Growth
     e('div', { className: 'complexity-metrics' },
       e('h4', null, `Operation Counts at n = ${n}`),
       e('div', { className: 'metrics-grid' }, complexities.map((complexity) => {
-        const isHighlighted = complexity.name === highlightedComplexity;
-        return e('div', { key: complexity.name, className: `metric-card${isHighlighted ? ' highlighted-complexity' : ''}` },
-          e('div', { className: 'metric-name', style: { borderLeftColor: isHighlighted ? '#dc2626' : complexity.color } }, complexity.name),
-        e('div', { className: 'metric-value' }, formatMetricValue(complexity.name === 'O(n!)' ? factorialBig(n) : complexity.formula(n)))
+        return e('div', {
+          key: complexity.name,
+          className: 'metric-card home-metric-card',
+          style: { '--complexity-color': complexity.color, backgroundColor: `${complexity.color}18` },
+        },
+          e('div', { className: 'metric-name', style: { borderLeftColor: complexity.color } }, complexity.name),
+          e('div', { className: 'metric-value' }, formatMetricValue(complexity.name === 'O(n!)' ? factorialBig(n) : complexity.formula(n)))
         );
       }))
     )

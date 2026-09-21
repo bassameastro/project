@@ -1,0 +1,76 @@
+:root {
+  --bg: #f4f7fb;
+  --bg-accent: #eaf2ff;
+  --panel: #ffffff;
+  --panel-strong: #f7faff;
+  --border: #dfe7f3;
+  --accent: #2563eb;
+  --accent-2: #3b82f6;
+  --text: #162033;
+  --muted: #5f6d84;
+  --danger: #dc2626;
+  --surface: #ffffff;
+  --surface-muted: #f7f9fc;
+  --shadow: rgba(15, 23, 42, 0.08);
+  --input-bg: #f8fbff;
+  --chip-bg: rgba(37, 99, 235, 0.1);
+}
+
+body[data-theme="dark"] {
+  --bg: #101820;
+  --bg-accent: #1c2b47;
+  --panel: #17202a;
+  --panel-strong: #1e2b3b;
+  --border: rgba(142, 191, 255, 0.16);
+  --accent: #58a6ff;
+  --accent-2: #3b82f6;
+  --text: #e8f1f5;
+  --muted: #8a98a8;
+  --danger: #ff7b72;
+  --surface: #17202a;
+  --surface-muted: rgba(255, 255, 255, 0.05);
+  --shadow: rgba(0, 0, 0, 0.24);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --chip-bg: rgba(88, 166, 255, 0.18);
+}
+
+/* Light mode flow colors override */
+body:not([data-theme="dark"]) .flow-text,
+body:not([data-theme="dark"]) .flow-arrow,
+body:not([data-theme="dark"]) .flow-machine,
+body:not([data-theme="dark"]) .ram-label {
+  color: var(--text);
+}
+
+body:not([data-theme="dark"]) .ram-top {
+  background: var(--accent);
+  box-shadow: 0 0 9px var(--accent);
+}
+
+body:not([data-theme="dark"]) .ram-body {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: var(--accent);
+}
+
+body:not([data-theme="dark"]) .ram-row {
+  background: var(--accent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: radial-gradient(circle at top left, var(--bg-accent), var(--bg) 55%);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  padding: 24px;
+}
+
