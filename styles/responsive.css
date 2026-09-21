@@ -1,3 +1,31 @@
+/* Responsive overrides. */
+
+@media (max-width: 900px) {
+  .section-buttons,
+  .home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .section-buttons,
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #root {
+    padding: 12px;
+  }
+}
+
+@media (hover: none) {
+  .home-card-flow {
+    max-height: 160px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 900px) {
   .algorithm-layout,
   .data-structures-layout,
@@ -7,6 +35,31 @@
 
   .algorithm-visual-panel {
     order: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .complexity-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .complexity-slider-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .complexity-slider-wrapper {
+    width: 100%;
+  }
+
+  .complexity-slider-label {
+    min-width: auto;
+  }
+
+  .complexity-slider-value {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
   }
 }
 
@@ -26,4 +79,225 @@
   .visual-area {
     min-height: 220px;
   }
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 10px;
+  }
+
+  /* header: title and toggle on one row */
+  .header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .header .info-note {
+    display: none;
+  } /* hides the duplicate sentence */
+
+  /* nav: 2x2 grid instead of 4 stacked buttons */
+  .section-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: 10px 0 14px;
+  }
+  .section-button {
+    padding: 12px 8px;
+    font-size: 0.9rem;
+  }
+  .section-button:hover,
+  .section-button.active {
+    transform: none;
+  }
+
+  /* less nested padding */
+  .section-panel {
+    padding: 14px;
+    border-radius: 16px;
+  }
+  .overview-card,
+  .info-card,
+  .info-section {
+    padding: 14px;
+  }
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .home-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  /* remove the outer box so cards aren't boxed inside a box (the extra side lines in your screenshots) */
+  .section-panel {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .section-panel > h2 {
+    font-size: 1.3rem;
+    margin: 0 0 4px;
+  }
+
+  /* two-column sections become one column */
+  .data-structures-layout,
+  .algorithm-layout,
+  .crypto-wheel-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  /* cards and panels: tighter */
+  .card {
+    padding: 14px;
+    border-radius: 14px;
+    box-shadow: none;
+  }
+  .visual-area {
+    height: 260px;
+    padding: 10px;
+  }
+  .data-array-visual,
+  .data-queue-visual,
+  .data-list-visual {
+    padding: 10px;
+    min-height: 140px;
+  }
+  .data-pseudocode-panel,
+  .tree-info-panel,
+  .algorithm-pseudocode-panel,
+  .crypto-pseudocode-panel {
+    padding: 10px;
+  }
+
+  /* tree toolbars */
+  .tree-editor-toolbar {
+    gap: 6px;
+  }
+  .tree-tool-button {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Big O visualizer (second screenshot) */
+  .complexity-visualizer {
+    margin-top: 16px;
+    padding: 12px;
+  }
+  .complexity-visualizer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  .complexity-chart-container {
+    margin: 12px 0;
+    padding: 6px;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .metric-card {
+    padding: 10px;
+  }
+
+  /* cryptography table view */
+  .crypto-mapping-wrapper {
+    padding: 10px 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* visualization first, controls underneath */
+  .algorithm-visual-panel,
+  .data-visual-card {
+    order: -1;
+  }
+
+  /* buttons in a 2-column grid instead of a tall wrapped stack */
+  .button-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .button-row button {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  /* tighter control spacing */
+  .controls,
+  .data-controls-card,
+  .data-controls-group {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 900px) and (orientation: landscape) {
+  .algorithm-layout,
+  .data-structures-layout {
+    grid-template-columns: minmax(220px, 40%) minmax(0, 1fr);
+    gap: 14px;
+  }
+  .algorithm-visual-panel {
+    order: 0;
+  }
+  .data-visual-card {
+    order: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  /* wheel: smaller letters, centre badge scales with the wheel */
+  .crypto-letter {
+    font-size: 0.7rem;
+  }
+  .crypto-center {
+    width: 24%;
+    height: 24%;
+    font-size: 0.75rem;
+  }
+  .crypto-wheel-title h3 {
+    font-size: 1.05rem;
+  }
+  .crypto-wheel-title p {
+    font-size: 0.85rem;
+  }
+
+  /* table view: 13 columns need a minimum of about 358px, more than a phone has, so let them shrink */
+  .crypto-mapping-wrapper {
+    padding: 10px 6px;
+  }
+  .crypto-mapping-row,
+  .crypto-mapping-arrows {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
+    gap: 2px;
+  }
+  .crypto-map-letter {
+    min-height: 32px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+  .crypto-mapping-arrows {
+    font-size: 0.7rem;
+  }
+
+  /* controls */
+  .crypto-shift-row input[type='number'] {
+    width: 64px;
+    flex: none;
+  }
+  .crypto-controls-card textarea {
+    min-height: 72px;
+  }
+
+  /* optional: wheel above the controls, same as the other sections */
+  /*.crypto-visual-card { order: -1; }*/
 }
