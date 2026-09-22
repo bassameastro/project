@@ -2,6 +2,9 @@
 
 An interactive, front-end-only web app for visualizing sorting and searching algorithms, core data structures, a Caesar cipher, and Big-O growth. It runs entirely in the browser, with no backend and no build step.
 
+## Languages and Frameworks Used
+[![Languages](https://skillicons.dev/icons?i=html,css,js,react)](https://skillicons.dev)
+
 ## Features
 
 - **Sorting:** Selection Sort, Bubble Sort (step-by-step animation)
