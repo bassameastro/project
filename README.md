@@ -104,9 +104,6 @@ Then open `http://localhost:8000`.
 3. Commit and push your changes
 4. Open a Pull Request
 
-## License
-
-MIT. Add a `LICENSE` file to the repo, or remove this section.
 
 ## Author
 
